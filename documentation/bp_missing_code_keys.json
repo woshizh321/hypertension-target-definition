@@ -1,0 +1,311 @@
+[
+  {
+    "dataset": "CHARLS",
+    "wave": "2013",
+    "variable": "qa003",
+    "codes": {}
+  },
+  {
+    "dataset": "CHARLS",
+    "wave": "2013",
+    "variable": "qa007",
+    "codes": {}
+  },
+  {
+    "dataset": "CHARLS",
+    "wave": "2013",
+    "variable": "qa011",
+    "codes": {}
+  },
+  {
+    "dataset": "CHARLS",
+    "wave": "2013",
+    "variable": "qa004",
+    "codes": {}
+  },
+  {
+    "dataset": "CHARLS",
+    "wave": "2013",
+    "variable": "qa008",
+    "codes": {}
+  },
+  {
+    "dataset": "CHARLS",
+    "wave": "2013",
+    "variable": "qa012",
+    "codes": {}
+  },
+  {
+    "dataset": "CHARLS",
+    "wave": "2015",
+    "variable": "qa003",
+    "codes": {}
+  },
+  {
+    "dataset": "CHARLS",
+    "wave": "2015",
+    "variable": "qa007",
+    "codes": {}
+  },
+  {
+    "dataset": "CHARLS",
+    "wave": "2015",
+    "variable": "qa011",
+    "codes": {}
+  },
+  {
+    "dataset": "CHARLS",
+    "wave": "2015",
+    "variable": "qa004",
+    "codes": {}
+  },
+  {
+    "dataset": "CHARLS",
+    "wave": "2015",
+    "variable": "qa008",
+    "codes": {}
+  },
+  {
+    "dataset": "CHARLS",
+    "wave": "2015",
+    "variable": "qa012",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "4",
+    "variable": "sys1",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "4",
+    "variable": "sys2",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "4",
+    "variable": "sys3",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "4",
+    "variable": "dias1",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "4",
+    "variable": "dias2",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "4",
+    "variable": "dias3",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "6",
+    "variable": "sys1",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "6",
+    "variable": "sys2",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "6",
+    "variable": "sys3",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "6",
+    "variable": "dias1",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "6",
+    "variable": "dias2",
+    "codes": {}
+  },
+  {
+    "dataset": "ELSA",
+    "wave": "6",
+    "variable": "dias3",
+    "codes": {}
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2014",
+    "variable": "OI859",
+    "codes": {
+      "993": "",
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2014",
+    "variable": "OI864",
+    "codes": {
+      "993": "",
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2014",
+    "variable": "OI869",
+    "codes": {
+      "993": "",
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2014",
+    "variable": "OI860",
+    "codes": {
+      "911": "",
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2014",
+    "variable": "OI865",
+    "codes": {
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2014",
+    "variable": "OI870",
+    "codes": {
+      "605": "",
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2018",
+    "variable": "QI859",
+    "codes": {
+      "933": "",
+      "993": "",
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2018",
+    "variable": "QI864",
+    "codes": {
+      "993": "",
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2018",
+    "variable": "QI869",
+    "codes": {
+      "993": "",
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2018",
+    "variable": "QI860",
+    "codes": {
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2018",
+    "variable": "QI865",
+    "codes": {
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "HRS",
+    "wave": "2018",
+    "variable": "QI870",
+    "codes": {
+      "998": "",
+      "999": ""
+    }
+  },
+  {
+    "dataset": "NHANES",
+    "wave": "2015-2016",
+    "variable": "BPXSY1",
+    "codes": {}
+  },
+  {
+    "dataset": "NHANES",
+    "wave": "2015-2016",
+    "variable": "BPXSY2",
+    "codes": {}
+  },
+  {
+    "dataset": "NHANES",
+    "wave": "2015-2016",
+    "variable": "BPXSY3",
+    "codes": {}
+  },
+  {
+    "dataset": "NHANES",
+    "wave": "2015-2016",
+    "variable": "BPXSY4",
+    "codes": {}
+  },
+  {
+    "dataset": "NHANES",
+    "wave": "2015-2016",
+    "variable": "BPXDI1",
+    "codes": {}
+  },
+  {
+    "dataset": "NHANES",
+    "wave": "2015-2016",
+    "variable": "BPXDI2",
+    "codes": {}
+  },
+  {
+    "dataset": "NHANES",
+    "wave": "2015-2016",
+    "variable": "BPXDI3",
+    "codes": {}
+  },
+  {
+    "dataset": "NHANES",
+    "wave": "2015-2016",
+    "variable": "BPXDI4",
+    "codes": {}
+  }
+]

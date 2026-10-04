@@ -1,0 +1,398 @@
+{
+  "blocks": [
+    {
+      "dataset": "CHARLS",
+      "wave": "2013",
+      "key": "ID",
+      "health_path": "charls_2013_health_path",
+      "physical_path": "charls_2013_physical_path",
+      "weight_path": "charls_2013_weight_path",
+      "R_fields": [
+        "da007_1_",
+        "da007_w2_1_1_",
+        "da007_w2_2_1_",
+        "zda007_1_",
+        "zda008_1_",
+        "xrtype"
+      ],
+      "T_fields": [
+        "da011s1",
+        "da011s2",
+        "da011s3"
+      ],
+      "SBP": [
+        "qa003",
+        "qa007",
+        "qa011"
+      ],
+      "DBP": [
+        "qa004",
+        "qa008",
+        "qa012"
+      ],
+      "proxy_fields": [
+        "db034"
+      ],
+      "BP_extra_fields": [
+        "qa015",
+        "qa016"
+      ],
+      "weight": "Biomarker_weight",
+      "strata": null,
+      "PSU": null,
+      "weight_status": "AUTHORIZED_PHYSICAL_WEIGHT_DESIGN_VARIABLES_UNRESOLVED",
+      "M_rule": "MEAN_ALL_VALID_PAIRED_READINGS",
+      "R_rule": "CHARLS_DOCTOR_HISTORY_ROUTING",
+      "T_rule": "CHARLS_EXPLICIT_CURRENT_TREATMENT",
+      "population": "Native core health-module respondents; no terminal/future participation or added age restriction",
+      "proxy_rule": "2015 proxy=1 yes,2 no; 2013 db034 positive source reason indicates proxy, otherwise mode unresolved",
+      "BP_missing": [
+        993,
+        999
+      ],
+      "DBP_zero_valid": false
+    },
+    {
+      "dataset": "CHARLS",
+      "wave": "2015",
+      "key": "ID",
+      "health_path": "charls_2015_health_path",
+      "physical_path": "charls_2015_physical_path",
+      "weight_path": "charls_2015_weight_path",
+      "R_fields": [
+        "da007_1_",
+        "da007_w2_1_1_",
+        "da007_w2_2_1_",
+        "zda007_1_",
+        "zda008_1_",
+        "xrtype"
+      ],
+      "T_fields": [
+        "da011s1",
+        "da011s2",
+        "da011s3"
+      ],
+      "SBP": [
+        "qa003",
+        "qa007",
+        "qa011"
+      ],
+      "DBP": [
+        "qa004",
+        "qa008",
+        "qa012"
+      ],
+      "proxy_fields": [
+        "proxy"
+      ],
+      "BP_extra_fields": [
+        "qa015",
+        "qa016"
+      ],
+      "weight": "Biomarker_weight",
+      "strata": null,
+      "PSU": null,
+      "weight_status": "AUTHORIZED_PHYSICAL_WEIGHT_DESIGN_VARIABLES_UNRESOLVED",
+      "M_rule": "MEAN_ALL_VALID_PAIRED_READINGS",
+      "R_rule": "CHARLS_DOCTOR_HISTORY_ROUTING",
+      "T_rule": "CHARLS_EXPLICIT_CURRENT_TREATMENT",
+      "population": "Native core health-module respondents; no terminal/future participation or added age restriction",
+      "proxy_rule": "2015 proxy=1 yes,2 no; 2013 db034 positive source reason indicates proxy, otherwise mode unresolved",
+      "BP_missing": [
+        993,
+        999
+      ],
+      "DBP_zero_valid": false,
+      "status_path": "charls_2015_status_path",
+      "status_fields": [
+        "died"
+      ]
+    },
+    {
+      "dataset": "ELSA",
+      "wave": "4",
+      "key": "idauniq",
+      "health_path": "elsa_4_health_path",
+      "physical_path": "elsa_4_physical_path",
+      "weight_path": "elsa_4_weight_path",
+      "R_fields": [
+        "hedawbp",
+        "hedacbp",
+        "hedanbp",
+        "hedasbp",
+        "hediabp",
+        "hedimbp",
+        "hedia96",
+        "hedim96"
+      ],
+      "T_fields": [
+        "hemda",
+        "hemdab"
+      ],
+      "SBP": [
+        "sys1",
+        "sys2",
+        "sys3"
+      ],
+      "DBP": [
+        "dias1",
+        "dias2",
+        "dias3"
+      ],
+      "proxy_fields": [
+        "askpx"
+      ],
+      "BP_extra_fields": [
+        "bpconst",
+        "bprespc",
+        "respbps",
+        "sysval",
+        "diaval"
+      ],
+      "weight": "w4nurwt",
+      "strata": null,
+      "PSU": null,
+      "weight_status": "AUTHORIZED_NURSE_WEIGHT_PUBLIC_PSU_STRATA_NOT_IDENTIFIED",
+      "M_rule": "OFFICIAL_SECOND_THIRD_WITH_BPRESPC_1",
+      "R_rule": "ELSA_CONFIRMED_DOCTOR_HISTORY_AND_EXPLICIT_NONE_RESPONSE",
+      "T_rule": "ELSA_EXPLICIT_CURRENT_BP_MEDICATION",
+      "population": "Native main-interview person spine; physical eligibility/consent retained; nurse-weight target population separate from raw respondents",
+      "proxy_rule": "askpx=1 yes,0 no, other unresolved",
+      "BP_missing": [
+        -1,
+        -2,
+        -8,
+        -9,
+        996,
+        999
+      ],
+      "DBP_zero_valid": false
+    },
+    {
+      "dataset": "ELSA",
+      "wave": "6",
+      "key": "idauniq",
+      "health_path": "elsa_6_health_path",
+      "physical_path": "elsa_6_physical_path",
+      "weight_path": "elsa_6_weight_path",
+      "R_fields": [
+        "hedawbp",
+        "hedacbp",
+        "hedanbp",
+        "hedasbp",
+        "hediabp",
+        "hedimbp",
+        "hedia96",
+        "hedim96"
+      ],
+      "T_fields": [
+        "hemda",
+        "hemdab"
+      ],
+      "SBP": [
+        "sys1",
+        "sys2",
+        "sys3"
+      ],
+      "DBP": [
+        "dias1",
+        "dias2",
+        "dias3"
+      ],
+      "proxy_fields": [
+        "askpx"
+      ],
+      "BP_extra_fields": [
+        "bpconst",
+        "full1",
+        "full2",
+        "full3",
+        "consubea",
+        "consubsm",
+        "consubdr",
+        "consubex",
+        "consubno",
+        "SYSVAL",
+        "DIAVAL"
+      ],
+      "weight": "w6nurwt",
+      "strata": null,
+      "PSU": null,
+      "weight_status": "AUTHORIZED_NURSE_WEIGHT_PUBLIC_PSU_STRATA_NOT_IDENTIFIED",
+      "M_rule": "MEAN_ALL_VALID_PAIRED_READINGS_WITH_COMPLETE_FLAGS_AND_REST_CONTEXT",
+      "R_rule": "ELSA_CONFIRMED_DOCTOR_HISTORY_AND_EXPLICIT_NONE_RESPONSE",
+      "T_rule": "ELSA_EXPLICIT_CURRENT_BP_MEDICATION",
+      "population": "Native main-interview person spine; physical eligibility/consent retained; nurse-weight target population separate from raw respondents",
+      "proxy_rule": "askpx=1 yes,0 no, other unresolved",
+      "BP_missing": [
+        -1,
+        -2,
+        -8,
+        -9,
+        996,
+        999
+      ],
+      "DBP_zero_valid": false
+    },
+    {
+      "dataset": "HRS",
+      "wave": "2014",
+      "key": "HHID_PN",
+      "health_path": "hrs_2014_health_path",
+      "physical_path": "hrs_2014_physical_path",
+      "weight_path": "hrs_2014_weight_path",
+      "health_module": "H14C_R",
+      "physical_module": "H14I_R",
+      "R_fields": [
+        "OC005"
+      ],
+      "T_fields": [
+        "OC006"
+      ],
+      "SBP": [
+        "OI859",
+        "OI864",
+        "OI869"
+      ],
+      "DBP": [
+        "OI860",
+        "OI865",
+        "OI870"
+      ],
+      "proxy_fields": [
+        "OPROXY"
+      ],
+      "BP_extra_fields": [],
+      "weight": "OPMWGTR",
+      "strata": "STRATUM",
+      "PSU": "SECU",
+      "status_fields": [
+        "OALIVE",
+        "OPROXY"
+      ],
+      "weight_status": "AUTHORIZED_PHYSICAL_WEIGHT_WITH_STRATUM_SECU_TRACKER_COVERAGE_QUALIFIED",
+      "M_rule": "MEAN_ALL_VALID_PAIRED_READINGS",
+      "R_rule": "HRS_1_3_YES_4_5_NO_RETRACTION_RETAINED",
+      "T_rule": "HRS_1_YES_5_NO_OTHER_UNKNOWN",
+      "population": "Native C_R respondent spine; tracker history is not baseline membership",
+      "proxy_rule": "OPROXY 1/2 proxy,5 self; other unresolved",
+      "BP_missing": [],
+      "DBP_zero_valid": false
+    },
+    {
+      "dataset": "HRS",
+      "wave": "2018",
+      "key": "HHID_PN",
+      "health_path": "hrs_2018_health_path",
+      "physical_path": "hrs_2018_physical_path",
+      "weight_path": "hrs_2018_weight_path",
+      "health_module": "H18C_R",
+      "physical_module": "H18I_R",
+      "R_fields": [
+        "QC005"
+      ],
+      "T_fields": [
+        "QC006"
+      ],
+      "SBP": [
+        "QI859",
+        "QI864",
+        "QI869"
+      ],
+      "DBP": [
+        "QI860",
+        "QI865",
+        "QI870"
+      ],
+      "proxy_fields": [
+        "QPROXY"
+      ],
+      "BP_extra_fields": [],
+      "weight": "QPMWGTR",
+      "strata": "STRATUM",
+      "PSU": "SECU",
+      "status_fields": [
+        "QALIVE",
+        "QPROXY"
+      ],
+      "weight_status": "AUTHORIZED_PHYSICAL_WEIGHT_WITH_STRATUM_SECU_TRACKER_COVERAGE_QUALIFIED",
+      "M_rule": "MEAN_ALL_VALID_PAIRED_READINGS",
+      "R_rule": "HRS_1_3_YES_4_5_NO_RETRACTION_RETAINED",
+      "T_rule": "HRS_1_YES_5_NO_OTHER_UNKNOWN",
+      "population": "Native C_R respondent spine; tracker history is not baseline membership",
+      "proxy_rule": "QPROXY 1/2 proxy,5 self; other unresolved",
+      "BP_missing": [],
+      "DBP_zero_valid": false
+    },
+    {
+      "dataset": "NHANES",
+      "wave": "2015-2016",
+      "key": "SEQN",
+      "health_path": "nhanes_2015_2016_health_path",
+      "physical_path": "nhanes_2015_2016_physical_path",
+      "weight_path": "nhanes_2015_2016_weight_path",
+      "view": "release_2015_2016_v1",
+      "R_fields": [
+        "BPQ020"
+      ],
+      "T_fields": [
+        "BPQ050A"
+      ],
+      "SBP": [
+        "BPXSY1",
+        "BPXSY2",
+        "BPXSY3",
+        "BPXSY4"
+      ],
+      "DBP": [
+        "BPXDI1",
+        "BPXDI2",
+        "BPXDI3",
+        "BPXDI4"
+      ],
+      "proxy_fields": [],
+      "BP_extra_fields": [
+        "RIDAGEYR"
+      ],
+      "weight": "WTMEC2YR",
+      "strata": "SDMVSTRA",
+      "PSU": "SDMVPSU",
+      "weight_status": "AUTHORIZED_RELEASE_MEC_WEIGHT_COMPLETE_DESIGN",
+      "M_rule": "MEAN_ALL_VALID_PAIRED_PROTOCOL_ATTEMPTS_INCLUDING_FOURTH_IF_VALID",
+      "R_rule": "NHANES_1_YES_2_NO_7_9_UNKNOWN",
+      "T_rule": "NHANES_1_YES_2_NO_7_9_UNKNOWN",
+      "population": "Age>=16 questionnaire-eligible domain within complete MEC-weight design universe; no pooling",
+      "proxy_rule": "Source CAPI permits authorized proxy wording; per-record proxy flag not established in current view",
+      "BP_missing": [],
+      "DBP_zero_valid": true
+    }
+  ],
+  "primary_pairs": [
+    {
+      "dataset": "CHARLS",
+      "baseline": "2013",
+      "followup": "2015",
+      "nominal_years": 2
+    },
+    {
+      "dataset": "ELSA",
+      "baseline": "4",
+      "followup": "6",
+      "nominal_years": 4
+    },
+    {
+      "dataset": "HRS",
+      "baseline": "2014",
+      "followup": "2018",
+      "nominal_years": 4
+    }
+  ],
+  "policies": {
+    "state_labels": [
+      "MEASUREMENT_NOT_ELEVATED_AND_NOT_RECOGNIZED",
+      "MEASUREMENT_ELEVATED_UNRECOGNIZED",
+      "MEASUREMENT_ELEVATED_RECOGNIZED",
+      "RECOGNIZED_WITHOUT_CURRENT_MEASURED_ELEVATION"
+    ]
+  }
+}

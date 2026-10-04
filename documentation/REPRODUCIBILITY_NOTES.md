@@ -1,0 +1,12 @@
+# Reproducibility and release boundaries
+
+PUBLIC_REPOSITORY_QC concerns file scope, privacy, paths and code structure. It does not claim that the public portability adapters were scientifically executed or independently validated end to end. This publication performed no data processing, fitting, bootstrap, interval calculation or figure redraw. Acquire source releases independently; verify interface preservation and compare local outputs before using results.
+
+The original production files were matched against their executed-code manifest. Portable versions change filesystem literals and add a path-helper import only. Primary label functions/source processing are extracted from the source derivation; only the non-production alternative-threshold assignment/counting and historical strict-T event branches are excluded. Numeric missing-code keys, variable names, fixed thresholds, seeds and authored method definitions are configuration/method metadata, not participant records or aggregate source datasets. No original provider questions/labels/codebooks or full private lock/sample-hash manifests are distributed.
+
+The source-interface adapter creates local manifests and a locally dated reproduction contract. These are not historical PI decisions. Preparatory profiling originally had a minor nonleakage process deviation; public release does not retrospectively assert that all source work was prospectively specified. No predictive leakage requiring a scientific rerun was detected by the closed project audit.
+
+Calibration point estimates/percentile intervals are preserved by the executed code, including intervals not containing original point estimates. Closed provenance adjudication did not establish interval coverage, bias correction or the reason for the replicate shift. A lower BP threshold was planned but not executed in frozen production. No further thresholds, tuning, waves or subgroups are authorized by the accompanying manuscript claims.
+
+## License and citation status
+The included scientific/figure source is original project-specific code. No vendored third-party source or competing copyright/license header was found. The MIT license applies only to project code; imported dependencies retain their own licenses and data/source documents remain governed by providers. CITATION.cff is omitted pending a verified author list; no author or DOI is invented. No GitHub Release or Zenodo archive is created by initial publication.

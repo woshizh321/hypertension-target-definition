@@ -1,0 +1,17 @@
+{
+  "python": "3.14.4",
+  "platform": "macOS-26.5-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "pandas": "3.0.2",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "statsmodels": "0.14.6",
+    "matplotlib": "3.10.9",
+    "pyarrow": "24.0.0",
+    "duckdb": "1.5.3",
+    "joblib": "1.5.3"
+  },
+  "threads": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 for execution",
+  "analysis_seed": 20261002
+}
