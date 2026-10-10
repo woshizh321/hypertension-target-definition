@@ -5,6 +5,7 @@ This is a reproduction adapter, not the original prospective lock artifact.
 """
 from pathlib import Path
 import sys
+from hrs_recognition import map_hrs_recognition
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'analysis'))
 from public_paths import PROJECT_ROOT,source_path,REPOSITORY_ROOT
 import pandas as pd,numpy as np,duckdb,json,hashlib,datetime,zipfile,io,re,ast,math
@@ -157,7 +158,7 @@ def construct_rt(d, b):
         T[yes] = 1
         tflag = yes & no
     elif ds == 'HRS':
-        R = n[b['R_fields'][0]].map({1: 1.0, 3: 1.0, 4: 0.0, 5: 0.0})
+        R = map_hrs_recognition(n[b['R_fields'][0]], b['wave'], b['R_fields'])
         rflag = n[b['R_fields'][0]].isin([3, 4])
         T = n[b['T_fields'][0]].map({1: 1.0, 5: 0.0})
     else:

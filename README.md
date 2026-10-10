@@ -19,7 +19,7 @@ This repository contains code, authored method documentation and source-interfac
 Obtain CHARLS through [authorized CHARLS access](https://charls.pku.edu.cn); ELSA through [ELSA/UK Data Service](https://www.elsa-project.ac.uk/data-and-documentation); HRS through [authorized HRS access](https://hrsdata.isr.umich.edu); and NHANES through [CDC/NCHS](https://www.cdc.gov/nchs/nhanes). Follow the applicable source terms, citations and redistribution restrictions. See [DATA_ACCESS.md](DATA_ACCESS.md) for required local interfaces and HRS precautions.
 
 ## Analysis workflow
-The exact execution order and original-to-public filename mapping are in [ANALYSIS_WORKFLOW.md](documentation/ANALYSIS_WORKFLOW.md). Paths are configured with `DATA_ROOT`, `PROJECT_ROOT` and `SOURCE_CONFIG`. Public path changes preserve the scientific AST. A primary-label reproduction adapter retains the primary source functions and excludes historical non-production branches. This publication task performed structural checks only; no scientific pipeline was executed.
+The exact execution order and original-to-public filename mapping are in [ANALYSIS_WORKFLOW.md](documentation/ANALYSIS_WORKFLOW.md). Paths are configured with `DATA_ROOT`, `PROJECT_ROOT` and `SOURCE_CONFIG`. The original public baseline preserved scientific ASTs through path changes. This CORR01 successor additionally corrects the HRS 2018 recognition mapping; other scientific logic is unchanged. A primary-label reproduction adapter retains the primary source functions and excludes historical non-production branches. This publication task performed structural checks only; no scientific pipeline was executed.
 
 ## Reproducing figures/tables
 After an authorized local reproduction, use the generated aggregate outputs:
@@ -32,11 +32,14 @@ An authorized CHARLS user can additionally supply `--private-charls-oof` to reco
 ## Main scientific boundaries
 - M is not biological ground truth; R is not diagnostic error.
 - Recognition associations are observational and do not establish causal access effects.
-- Education/contact target-specific incremental prediction value was not supported.
+- The six primary CHARLS comparisons did not support the hypothesized greater education/contact incremental contribution for R than M. The corrected HRS education-mappable external comparison is SECONDARY_SUPPORTED_WITH_QUALIFICATIONS; it is not primary confirmation, causal evidence, or cross-cohort replication.
 - Similar overall ranking can coexist with partially different high-risk membership; this does not establish clinical utility or fairness.
 - CHARLS development and ELSA/HRS external prediction horizons differ; external transport is qualified.
 - A lower BP threshold was planned but not part of the frozen production analysis and was not executed in that analysis.
 - Calibration interval provenance does not establish coverage or explain a bootstrap distribution shift.
+
+## HRS CORR01 successor
+The original public baseline is [eb3ac6a](https://github.com/woshizh321/hypertension-target-definition/commit/eb3ac6aaf30797865bd3a31a851a0f4d40c91bcf). This successor follows a PI-authorized, independently audited post-lock data-integrity correction. HRS 2014 OC005 remains 1/3 positive and 4/5 negative. HRS 2018 QC005 uses 1/6 positive and 4/5 negative; code 3 and other unsupported or missing responses remain unknown. Code 6 retains historical professional recognition and requires neither current BP elevation nor current treatment, QC006=6, or QZ101=1. See [source definitions](documentation/VARIABLE_DEFINITIONS.md). The baseline commit remains the original release; this branch is the corrected implementation pending independent code audit and PI release authorization, without a new release tag.
 
 ## Software environment
 Recorded Python/package versions are in [environment/](environment/). Run the dependency-free structural checks with `python tests/test_public_structure.py`. End-to-end numerical equivalence has not been demonstrated for the public portability adapters; validate acquired release identities, datatype preservation, native keys and local output hashes before interpretation.
