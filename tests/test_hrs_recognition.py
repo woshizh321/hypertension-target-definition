@@ -65,14 +65,35 @@ class HRSRecognition(unittest.TestCase):
                                                       [np.nan] * 10 + [1.]))
 
     def test_wave_and_source_field_guard(self):
-        # Preserve the exact audited conditional guard, not a new fallback rule.
         values = pd.Series([3, 6])
-        for wave, fields in [('2014', ['OC005']), ('2018', ['OC005']),
-                             ('2014', ['QC005'])]:
+        invalid = [
+            ('2018', ['OC005']), ('2014', ['QC005']),
+            ('2016', ['OC005']), ('2016', ['QC005']),
+            ('2014', []), ('2018', []),
+            ('2014', ['OC005', 'QC005']), ('2018', ['QC005', 'OC005']),
+            ('2014', ['UNKNOWN']), ('2018', ['UNKNOWN']),
+            ('2014', ['oc005']), ('2018', ['qc005']),
+            ('2014', 'OC005'), ('2018', 'QC005'),
+            ('2014', None), ('2018', None),
+            ('2014', ('OC005',)), ('2018', ('QC005',)),
+            (2014, ['OC005']), (2018, ['QC005']),
+            (None, ['OC005']), ('', ['QC005']),
+        ]
+        for wave, fields in invalid:
             with self.subTest(wave=wave, fields=fields):
-                pd.testing.assert_series_equal(
-                    helper.map_hrs_recognition(values, wave, fields),
-                    pd.Series([1., np.nan]))
+                with self.assertRaisesRegex(
+                    ValueError,
+                    '^Unsupported HRS recognition configuration: '
+                    'expected 2014/OC005 or 2018/QC005$',
+                ):
+                    helper.map_hrs_recognition(values, wave, fields)
+
+    def test_invalid_configuration_rejected_before_numeric_conversion(self):
+        with patch.object(helper.pd, 'to_numeric',
+                          side_effect=AssertionError('Classification attempted')) as convert:
+            with self.assertRaisesRegex(ValueError, 'Unsupported HRS recognition configuration'):
+                helper.map_hrs_recognition(object(), '2018', ['OC005'])
+            convert.assert_not_called()
 
     def test_actual_adapter_no_auxiliary_confirmation_and_status_schema(self):
         b = block('HRS', '2018')
