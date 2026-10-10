@@ -317,7 +317,7 @@
       ],
       "weight_status": "AUTHORIZED_PHYSICAL_WEIGHT_WITH_STRATUM_SECU_TRACKER_COVERAGE_QUALIFIED",
       "M_rule": "MEAN_ALL_VALID_PAIRED_READINGS",
-      "R_rule": "HRS_1_3_YES_4_5_NO_RETRACTION_RETAINED",
+      "R_rule": "HRS_2018_QC005_1_6_YES_4_5_NO_3_UNSUPPORTED_OTHER_UNKNOWN_HISTORICAL_RECOGNITION",
       "T_rule": "HRS_1_YES_5_NO_OTHER_UNKNOWN",
       "population": "Native C_R respondent spine; tracker history is not baseline membership",
       "proxy_rule": "QPROXY 1/2 proxy,5 self; other unresolved",
