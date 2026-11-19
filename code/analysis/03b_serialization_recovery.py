@@ -1,10 +1,15 @@
 """Serialization-only recovery from completed 200-refit checkpoint; no primary models rerun."""
 from pathlib import Path
+from public_paths import PROJECT_ROOT
+from checkpoint_binding import current_identity, load_bound_checkpoint, CheckpointBindingError
 p=Path(__file__).parent/'03_aim3_prediction.py'
+root=PROJECT_ROOT/'analysis/LABELBIAS_PROD01'
+identity=current_identity(PROJECT_ROOT,p.resolve().parents[2])
+c=load_bound_checkpoint(root/'03_aim3/PROD01_BOOTSTRAP_CHECKPOINT.joblib',identity)
+if current_identity(PROJECT_ROOT,p.resolve().parents[2])!=identity:raise CheckpointBindingError('Scientific identity changed during recovery')
 s=p.read_text();prefix=s.split('point=pairedCV(train,True);')[0];exec(compile(prefix,str(p),'exec'))
-c=joblib.load(O/'03_aim3/PROD01_BOOTSTRAP_CHECKPOINT.joblib');assert c['completed']==200
 for k,v in c.items():
- if k not in ['completed','RNG']:globals()[k]=v
+ if k not in ['completed','RNG','provenance']:globals()[k]=v
 pred=pd.read_parquet(O/'03_aim3/PROD01_CHARLS_OOF_PREDICTIONS.parquet');point={b:{t:pred[b+'_'+t].to_numpy() for t in ['M','R']} for b in blocks}
 main=scalarrecords(train,point,'CHARLS','INTERNAL_COMMON_PAIR');inc=increments(train,point,'CHARLS','INTERNAL_COMMON_PAIR');ranking=ranks(train,point,'CHARLS','INTERNAL_COMMON_PAIR','FULL');cal=calibration(train,point,'CHARLS','INTERNAL_COMMON_PAIR');sub=subgroups(train,point,'CHARLS','INTERNAL_COMMON_PAIR','FULL')
 final=joblib.load(O/'03_aim3/PROD01_CHARLS_FROZEN_MODELS.joblib');extmain=[];extinc=[];extrank=[];extcal=[];extsub=[]

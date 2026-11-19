@@ -1,5 +1,6 @@
 """Locked paired-label prediction and full-pipeline paired cluster bootstrap."""
 from prod01_common import *
+from checkpoint_binding import current_identity, verify_scientific_inputs, write_bound_checkpoint, CheckpointBindingError
 import warnings,time,joblib,copy
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
@@ -15,7 +16,8 @@ import statsmodels.api as sm
 warnings.filterwarnings('ignore',category=FutureWarning)
 L=start(__file__);blocks={'BASE':[],'BASE_SES':['education'],'BASE_ACCESS':['access'],'FULL':['education','access']};bootn=200
 D={ds:data(ds).loc[lambda x:x.aim3_common].copy().reset_index(drop=True) for ds in ['CHARLS','ELSA','HRS']};train=D['CHARLS']
-assert [len(D[d]) for d in ['CHARLS','ELSA','HRS']]==[5303,2075,1619]
+if [len(D[d]) for d in ['CHARLS','ELSA','HRS']] != [5303,2075,1623]: raise AssertionError('Unexpected common-pair cohort sizes')
+verify_scientific_inputs(O.parents[1],Path(__file__).resolve().parents[2])
 QC=[];folds=[];bootlog=[]
 
 def Xframe(d):
@@ -138,6 +140,7 @@ for ds,pp in [('CHARLS',point)]:
   for t in ['M','R']:out[b+'_'+t]=pp[b][t]
  out.to_parquet(O/'03_aim3/PROD01_CHARLS_OOF_PREDICTIONS.parquet',index=False)
 save(folds,'03_aim3/PROD01_PAIRED_FOLD_ASSIGNMENTS.csv')
+checkpoint_identity=current_identity(O.parents[1],Path(__file__).resolve().parents[2])
 # Point values are retained before bootstrap; interruption can resume using recorded checkpoint, not change the lock.
 Bmain=[];Binc=[];Brank=[];Bcal=[];Bsub=[];Bext=[];Bextinc=[];Bextrank=[];Bextcal=[];Bextsub=[]
 clock0=time.monotonic();rng=np.random.default_rng(20261004)
@@ -161,7 +164,9 @@ for b in range(bootn):
   print('Full pipeline bootstrap',b+1,'/',bootn,'elapsed_seconds',round(time.monotonic()-clock0),flush=True)
   (O/'10_manifests/PROD01_PREDICTION_PROGRESS.json').write_text(json.dumps(dict(completed_bootstrap=b+1,total=bootn,elapsed_seconds=time.monotonic()-clock0),indent=2))
  # Full deterministic RNG/model output checkpoint only; not a source/result-selection mechanism.
- if (b+1)%25==0:joblib.dump(dict(completed=b+1,RNG=rng.bit_generator.state,Bmain=Bmain,Binc=Binc,Brank=Brank,Bcal=Bcal,Bsub=Bsub,Bext=Bext,Bextinc=Bextinc,Bextrank=Bextrank,Bextcal=Bextcal,Bextsub=Bextsub,bootlog=bootlog),O/'03_aim3/PROD01_BOOTSTRAP_CHECKPOINT.joblib',compress=3)
+ if (b+1)%25==0:
+  if current_identity(O.parents[1],Path(__file__).resolve().parents[2])!=checkpoint_identity:raise CheckpointBindingError('Scientific identity changed during bootstrap')
+  write_bound_checkpoint(O/'03_aim3/PROD01_BOOTSTRAP_CHECKPOINT.joblib',dict(completed=b+1,RNG=rng.bit_generator.state,Bmain=Bmain,Binc=Binc,Brank=Brank,Bcal=Bcal,Bsub=Bsub,Bext=Bext,Bextinc=Bextinc,Bextrank=Bextrank,Bextcal=Bextcal,Bextsub=Bextsub,bootlog=bootlog),checkpoint_identity)
 
 # Attach 95% paired full-procedure percentile intervals using identical keys.
 def attach(points,boots,keys,value='value'):
