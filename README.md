@@ -52,3 +52,7 @@ The repository's original project code is released under the MIT License. Third-
 
 ## Data-use notice
 The absence of data from this repository is intentional. Aggregate datasets are also excluded because code publication does not establish their redistribution permissions. Do not upload restricted source data or individual outputs to this repository, issues, pull requests or AI services. See [DATA_ACCESS.md](DATA_ACCESS.md).
+
+## STAB01 secondary extension
+
+The [STAB01 code and reproducibility notes](documentation/STAB01_REPRODUCIBILITY.md) describe a separately specified secondary assessment conditional on the observed cohort, fixed community-grouped folds and training-community perturbations. The historical independent audit verified cohort/fold identity, original membership and recorded sampling draws; it did not independently recompute all refit predictions, replicate intersections or full empirical distributions. Synthetic tests and source availability do not establish complete numerical reproduction from licensed source data. The public package alone cannot verify the historical frozen input identity; authorized local execution requires a trusted private authority and access-controlled inputs.
